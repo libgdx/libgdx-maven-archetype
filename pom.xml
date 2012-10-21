@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.googlecode.playn</groupId>
-    <artifactId>playn-project</artifactId>
-    <version>1.5-SNAPSHOT</version>
-  </parent>
-
-  <artifactId>playn-archetype</artifactId>
+  <groupId>com.badlogic.gdx</groupId>
+  <artifactId>gdx-archetype</artifactId>
+  <version>0.9.7-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
-  <name>PlayN Project Archetype</name>
-  <description>Archetype for PlayN game projects.</description>
+  <name>Libgdx Project Archetype</name>
+  <description>Archetype for libgdx projects.</description>
 
   <build>
     <extensions>

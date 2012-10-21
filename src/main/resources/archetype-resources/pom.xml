@@ -3,21 +3,22 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.googlecode.playn</groupId>
-    <artifactId>playn-project</artifactId>
-    <version>${project.version}</version>
-  </parent>
-
   <groupId>\${groupId}</groupId>
   <artifactId>\${artifactId}</artifactId>
   <version>\${version}</version>
   <packaging>pom</packaging>
-  <name>\${JavaGameClassName} Metaproject</name>
+  <name>\${JavaGameClassName} Parent</name>
 
   <properties>
-    <playn.version>${project.version}</playn.version>
+    <gdx.version>${project.version}</gdx.version>
   </properties>
+  
+  <repositories>
+	<repository>
+      <id>gdx-nightlies</id>
+      <url>http://libgdx.badlogicgames.com/nightlies/maven</url>
+    </repository>
+  </repositories>
 
   <profiles>
     <profile>
@@ -29,7 +30,7 @@
       <id>android</id>
       <modules><module>android</module></modules>
     </profile>
-    <profile>
+    <!--<profile>
       <id>ios</id>
       <modules><module>ios</module></modules>
     </profile>
@@ -40,7 +41,6 @@
     <profile>
       <id>flash</id>
       <modules><module>flash</module></modules>
-    </profile>
+    </profile>-->
   </profiles>
-
 </project>

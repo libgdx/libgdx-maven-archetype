@@ -28,9 +28,9 @@
     </dependency>
 
     <dependency>
-      <groupId>com.googlecode.playn</groupId>
-      <artifactId>playn-html</artifactId>
-      <version>${playn.version}</version>
+      <groupId>com.badlogic.gdx</groupId>
+      <artifactId>gdx-backend-gwt</artifactId>
+      <version>${gdx.version}</version>
     </dependency>
 
     <!-- Start Google App Engine dependencies -->
