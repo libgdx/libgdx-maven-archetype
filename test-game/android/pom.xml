@@ -25,6 +25,27 @@
 		<artifactId>test-game-core</artifactId>
 		<version>${project.version}</version>
 	</dependency>
+	
+	<dependency>
+	    <groupId>com.badlogic.gdx</groupId>
+	    <artifactId>gdx-backend-android</artifactId>
+	    <version>${gdx.version}</version>
+	</dependency>
+	
+	<dependency>
+        <groupId>com.badlogic.gdx</groupId>
+        <artifactId>gdx-platform</artifactId>
+        <version>${gdx.version}</version>
+        <classifier>natives-armeabi</classifier>
+        <scope>provided</scope>
+	</dependency>
+	<dependency>
+        <groupId>com.badlogic.gdx</groupId>
+        <artifactId>gdx-platform</artifactId>
+        <version>${gdx.version}</version>
+        <classifier>natives-armeabi-v7a</classifier>
+        <scope>provided</scope>
+	</dependency>
   
     <dependency>
       <groupId>com.google.android</groupId>
@@ -36,6 +57,23 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>com.googlecode.mavennatives</groupId>
+        <artifactId>maven-nativedependencies-plugin</artifactId>
+        <version>0.0.7</version>
+        <configuration>
+                <nativesTargetDir>libs</nativesTargetDir>
+                <separateDirs>true</separateDirs>
+        </configuration>
+        <executions>
+                <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                                <goal>copy</goal>
+                        </goals>
+                </execution>
+        </executions>
+	  </plugin>
       <plugin>
         <groupId>com.jayway.maven.plugins.android.generation2</groupId>
         <artifactId>android-maven-plugin</artifactId>

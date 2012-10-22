@@ -1,0 +1,6 @@
+/test-game/android/libs
+.classpath
+.project
+target/
+.settings/
+bin/
