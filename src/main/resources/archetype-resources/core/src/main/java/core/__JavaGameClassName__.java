@@ -3,32 +3,44 @@
 #set( $symbol_escape = '\' )
 package ${package}.core;
 
-import static playn.core.PlayN.*;
+import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.Gdx;
 
-import playn.core.Game;
-import playn.core.Image;
-import playn.core.ImageLayer;
+public class ${JavaGameClassName} implements ApplicationListener {
+	Texture texture;
+	SpriteBatch batch;
+	
+	@Override
+	public void create () {
+		texture = new Texture(Gdx.files.internal("libgdx-logo.png"));
+		batch = new SpriteBatch();
+	}
 
-public class ${JavaGameClassName} implements Game {
-  @Override
-  public void init() {
-    // create and add background image layer
-    Image bgImage = assets().getImage("images/bg.png");
-    ImageLayer bgLayer = graphics().createImageLayer(bgImage);
-    graphics().rootLayer().add(bgLayer);
-  }
+	@Override
+	public void resize (int width, int height) {
+	}
 
-  @Override
-  public void paint(float alpha) {
-    // the background automatically paints itself, so no need to do anything here!
-  }
+	@Override
+	public void render () {
+		Gdx.gl.glClearColor(0, 0, 0, 0);
+		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		batch.begin();
+		batch.draw(texture, 100, 100);
+		batch.end();
+	}
 
-  @Override
-  public void update(float delta) {
-  }
+	@Override
+	public void pause () {
+	}
 
-  @Override
-  public int updateRate() {
-    return 25;
-  }
+	@Override
+	public void resume () {
+	}
+
+	@Override
+	public void dispose () {
+	}
 }

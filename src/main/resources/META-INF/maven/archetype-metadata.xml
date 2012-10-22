@@ -25,6 +25,12 @@
         <include>**/*.java</include>
       </includes>
     </fileSet>
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>java/src/main/resources</directory>
+      <includes>
+        <include>**/*.*</include>
+      </includes>
+    </fileSet>
     <!-- html module -->
     <fileSet filtered="true" encoding="UTF-8">
       <directory>html</directory>
@@ -88,6 +94,12 @@
       <directory>android/res/drawable-mdpi</directory>
       <includes>
         <include>**/*.png</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>android/assets</directory>
+      <includes>
+        <include>**/*.*</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">

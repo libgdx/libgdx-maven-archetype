@@ -3,16 +3,20 @@
 #set( $symbol_escape = '\' )
 package ${package}.android;
 
-import playn.android.GameActivity;
-import playn.core.PlayN;
-
 import ${package}.core.${JavaGameClassName};
 
-public class ${JavaGameClassName}Activity extends GameActivity {
+import android.os.Bundle;
 
-  @Override
-  public void main(){
-    platform().assets().setPathPrefix("${packageInPathFormat}/resources");
-    PlayN.run(new ${JavaGameClassName}());
-  }
+import com.badlogic.gdx.backends.android.AndroidApplication;
+import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.tinydungeons.TinyDungeons;
+
+public class ${JavaGameClassName}Activity extends AndroidApplication {
+	
+	@Override
+   public void onCreate(Bundle savedInstanceState) {
+       super.onCreate(savedInstanceState);
+       AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
+       initialize(new ${JavaGameClassName}(), config);
+   }
 }

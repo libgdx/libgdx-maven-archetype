@@ -3,16 +3,14 @@
 #set( $symbol_escape = '\' )
 package ${package}.java;
 
-import playn.core.PlayN;
-import playn.java.JavaPlatform;
-
 import ${package}.core.${JavaGameClassName};
 
-public class ${JavaGameClassName}Java {
+import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
-  public static void main(String[] args) {
-    JavaPlatform platform = JavaPlatform.register();
-    platform.assets().setPathPrefix("${packageInPathFormat}/resources");
-    PlayN.run(new ${JavaGameClassName}());
-  }
+public class ${JavaGameClassName}Java {
+	public static void main(String[] args) {
+		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+		new LwjglApplication(new ${JavaGameClassName}(), config);
+	}
 }
