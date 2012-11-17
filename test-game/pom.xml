@@ -9,7 +9,7 @@
   <name>TestGame Parent</name>
 
   <properties>
-      <gdx.version>0.9.7-SNAPSHOT</gdx.version>
+      <gdx.version>0.9.8-SNAPSHOT</gdx.version>
   </properties>
   
   <repositories>
