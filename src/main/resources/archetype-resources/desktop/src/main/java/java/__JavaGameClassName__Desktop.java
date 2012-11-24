@@ -8,7 +8,7 @@ import ${package}.core.${JavaGameClassName};
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
-public class ${JavaGameClassName}Java {
+public class ${JavaGameClassName}Desktop {
 	public static void main(String[] args) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.useGL20 = true;

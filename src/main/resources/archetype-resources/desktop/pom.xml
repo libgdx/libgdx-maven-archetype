@@ -9,12 +9,12 @@
     <version>${version}</version>
   </parent>
 
-  <artifactId>${artifactId}-java</artifactId>
+  <artifactId>${artifactId}-desktop</artifactId>
   <packaging>jar</packaging>
-  <name>${JavaGameClassName} Java</name>
+  <name>${JavaGameClassName} desktop</name>
 
   <properties>
-    <mainClass>${package}.java.${JavaGameClassName}Java</mainClass>
+    <mainClass>${package}.java.${JavaGameClassName}Desktop</mainClass>
   </properties>
   
   <build>
