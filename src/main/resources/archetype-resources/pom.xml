@@ -11,6 +11,8 @@
 
   <properties>
     <gdx.version>${project.version}</gdx.version>
+    <android.version>2.1.2</android.version>
+    <android.maven.version>3.4.1</android.maven.version>
   </properties>
   
   <repositories>

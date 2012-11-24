@@ -66,6 +66,12 @@
         <include>**/*.java</include>
       </includes>
     </fileSet>
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>android/src/test/java</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
       <directory>android/res/values</directory>
       <includes>
