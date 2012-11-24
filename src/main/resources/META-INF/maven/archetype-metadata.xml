@@ -14,15 +14,21 @@
     </fileSet>
     <!-- java module -->
     <fileSet filtered="true" encoding="UTF-8">
-      <directory>java</directory>
+      <directory>desktop</directory>
       <includes>
         <include>pom.xml</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" packaged="true" encoding="UTF-8">
-      <directory>java/src/main/java</directory>
+      <directory>desktop/src/main/java</directory>
       <includes>
         <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="false" packaged="false" encoding="UTF-8">
+      <directory>desktop/assets</directory>
+      <includes>
+        <include>**/*</include>
       </includes>
     </fileSet>
     <!-- html module -->
@@ -94,12 +100,6 @@
       <directory>android/res/drawable-mdpi</directory>
       <includes>
         <include>**/*.png</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>android/assets</directory>
-      <includes>
-        <include>**/*.*</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">

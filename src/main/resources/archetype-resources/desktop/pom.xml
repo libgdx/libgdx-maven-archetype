@@ -20,7 +20,7 @@
   <build>
     <resources>
       <resource>
-        <directory>src/main/resources</directory>
+        <directory>assets</directory>
       </resource>
     </resources>
   </build>

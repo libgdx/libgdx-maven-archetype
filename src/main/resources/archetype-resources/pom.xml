@@ -38,25 +38,21 @@
 
   <profiles>
     <profile>
-      <id>java</id>
+      <id>desktop</id>
       <activation><activeByDefault>true</activeByDefault></activation>
-      <modules><module>java</module></modules>
+      <modules><module>desktop</module></modules>
     </profile>
     <profile>
       <id>android</id>
       <modules><module>android</module></modules>
     </profile>
-    <!--<profile>
-      <id>ios</id>
-      <modules><module>ios</module></modules>
-    </profile>
     <profile>
       <id>html</id>
       <modules><module>html</module></modules>
     </profile>
-    <profile>
-      <id>flash</id>
-      <modules><module>flash</module></modules>
+    <!--<profile>
+      <id>ios</id>
+      <modules><module>ios</module></modules>
     </profile>-->
   </profiles>
 </project>
