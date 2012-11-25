@@ -39,20 +39,15 @@
   <profiles>
     <profile>
       <id>desktop</id>
-      <activation><activeByDefault>true</activeByDefault></activation>
       <modules><module>desktop</module></modules>
     </profile>
     <profile>
       <id>android</id>
       <modules><module>android</module></modules>
     </profile>
-    <profile>
-      <id>html</id>
-      <modules><module>html</module></modules>
-    </profile>
-    <!--<profile>
-      <id>ios</id>
-      <modules><module>ios</module></modules>
-    </profile>-->
   </profiles>
+  
+  <modules>
+      <module>core</module>
+  </modules>
 </project>

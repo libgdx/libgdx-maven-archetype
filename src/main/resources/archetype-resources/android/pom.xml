@@ -80,13 +80,9 @@
           <assetsDirectory>../desktop/assets</assetsDirectory>
           <resourceDirectory>${project.basedir}/res</resourceDirectory>
           <sdk>
-            <platform>11</platform>
+            <platform>15</platform>
           </sdk>
-          <deleteConflictingFiles>true</deleteConflictingFiles>
           <undeployBeforeDeploy>true</undeployBeforeDeploy>
-          <jvmArguments>
-            <jvmArgument>-Xmx1024m</jvmArgument>
-          </jvmArguments>
           <dex>
             <jvmArguments>
               <jvmArgument>-Xmx1024m</jvmArgument>
