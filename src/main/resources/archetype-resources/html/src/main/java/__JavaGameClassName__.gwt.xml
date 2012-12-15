@@ -2,7 +2,7 @@
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
 <module rename-to='${rootArtifactId}'>
-  <inherits name='playn.PlayN'/>
+  <inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
 
   <source path='core'/>
   <source path='html'/>
@@ -10,4 +10,6 @@
   <public path="resources" />
 
   <entry-point class='${package}.html.${JavaGameClassName}Html'/>
+  <set-configuration-property name="gdx.assetpath" value="../../../../desktop/assets/" />
+  <set-configuration-property name="gdx.assetoutputpath" value="./" />
 </module>
