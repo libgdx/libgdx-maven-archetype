@@ -6,12 +6,6 @@
     <requiredProperty key="JavaGameClassName"/>
   </requiredProperties>
   <fileSets>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory></directory>
-      <includes>
-        <include>build.xml</include>
-      </includes>
-    </fileSet>
     <!-- java module -->
     <fileSet filtered="true" encoding="UTF-8">
       <directory>desktop</directory>
