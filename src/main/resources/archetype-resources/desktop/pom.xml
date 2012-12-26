@@ -1,47 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>${groupId}</groupId>
-    <artifactId>${rootArtifactId}</artifactId>
-    <version>${version}</version>
-  </parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>${groupId}</groupId>
+		<artifactId>${rootArtifactId}</artifactId>
+		<version>${version}</version>
+	</parent>
 
-  <artifactId>${artifactId}-desktop</artifactId>
-  <packaging>jar</packaging>
-  <name>${JavaGameClassName} desktop</name>
+	<artifactId>${artifactId}-desktop</artifactId>
+	<packaging>jar</packaging>
+	<name>${JavaGameClassName} desktop</name>
 
-  <properties>
-    <mainClass>${package}.java.${JavaGameClassName}Desktop</mainClass>
-  </properties>
-  
-  <build>
-    <resources>
-      <resource>
-        <directory>assets</directory>
-      </resource>
-    </resources>
-  </build>
+	<properties>
+		<mainClass>${package}.java.${JavaGameClassName}Desktop</mainClass>
+	</properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>${groupId}</groupId>
-      <artifactId>${rootArtifactId}-core</artifactId>
-      <version>${project.version}</version>
-    </dependency>
+	<build>
+		<resources>
+			<resource>
+				<directory>assets</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>${mainClass}</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
-    <dependency>
-      <groupId>com.badlogic.gdx</groupId>
-      <artifactId>gdx</artifactId>
-      <version>${gdx.version}</version>
-    </dependency>
-	
-	<dependency>
-      <groupId>com.badlogic.gdx</groupId>
-      <artifactId>gdx-backend-lwjgl</artifactId>
-      <version>${gdx.version}</version>
-    </dependency>
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.badlogic.gdx</groupId>
+			<artifactId>gdx</artifactId>
+			<version>${gdx.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.badlogic.gdx</groupId>
+			<artifactId>gdx-backend-lwjgl</artifactId>
+			<version>${gdx.version}</version>
+		</dependency>
+	</dependencies>
 </project>
