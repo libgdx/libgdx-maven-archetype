@@ -10,6 +10,6 @@
   <public path="resources" />
 
   <entry-point class='${package}.html.${JavaGameClassName}Html'/>
-  <set-configuration-property name="gdx.assetpath" value="${asset.input.dir}" />
-  <set-configuration-property name="gdx.assetoutputpath" value="${asset.output.dir}" />
+  <set-configuration-property name="gdx.assetpath" value="${asset.input.dir},../desktop/assets,../../../../desktop/assets/" />
+  <set-configuration-property name="gdx.assetoutputpath" value="${asset.output.dir},src/main/webapp,./" />
 </module>
