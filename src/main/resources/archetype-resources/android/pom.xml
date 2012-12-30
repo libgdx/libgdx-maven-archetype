@@ -49,6 +49,9 @@
 	</dependencies>
 
 	<build>
+	    <!-- output APK doesn't contain version number, needed for Intellij Idea -->
+	    <finalName>${project.artifactId}</finalName>
+	    
 		<plugins>
 			<!-- Responsible for unpacking the shared libraries to the libs/ folder -->
 			<plugin>
