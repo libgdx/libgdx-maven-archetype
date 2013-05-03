@@ -12,7 +12,7 @@ import com.badlogic.gdx.Gdx;
 public class ${JavaGameClassName} implements ApplicationListener {
 	Texture texture;
 	SpriteBatch batch;
-	
+
 	@Override
 	public void create () {
 		texture = new Texture(Gdx.files.internal("libgdx-logo.png"));

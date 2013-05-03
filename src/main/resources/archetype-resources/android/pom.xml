@@ -12,6 +12,14 @@
 	<packaging>apk</packaging>
 	<name>${JavaGameClassName} Android</name>
 
+	<properties>
+		<keystore.path>game.keystore</keystore.path>
+		<keystore.alias>game</keystore.alias>
+		<!-- you can pass these on the command line as -Dkeystore.password=foo etc. -->
+		<keystore.password></keystore.password>
+		<key.password>${keystore.password}</key.password>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>${groupId}</groupId>
@@ -49,11 +57,11 @@
 	</dependencies>
 
 	<build>
-	    <!-- output APK doesn't contain version number, needed for Intellij Idea -->
-	    <finalName>${project.artifactId}</finalName>
-	    
+		<!-- output APK doesn't contain version number, needed for Intellij Idea -->
+		<finalName>${project.artifactId}</finalName>
+
 		<plugins>
-			<!-- Responsible for unpacking the shared libraries to the libs/ folder -->
+			<!-- responsible for unpacking the shared libraries to the libs/ folder -->
 			<plugin>
 				<groupId>com.googlecode.mavennatives</groupId>
 				<artifactId>maven-nativedependencies-plugin</artifactId>
@@ -72,14 +80,14 @@
 				</executions>
 			</plugin>
 
-			<!-- Responsible for being able to compile for Android -->
+			<!-- responsible for being able to compile for Android -->
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 				<artifactId>android-maven-plugin</artifactId>
 				<version>${android.maven.version}</version>
 				<configuration>
 					<androidManifestFile>${project.basedir}/AndroidManifest.xml</androidManifestFile>
-					<assetsDirectory>../desktop/assets</assetsDirectory>
+					<assetsDirectory>${project.basedir}/../assets</assetsDirectory>
 					<resourceDirectory>${project.basedir}/res</resourceDirectory>
 					<sdk>
 						<platform>15</platform>
@@ -104,4 +112,58 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<!-- run 'mvn package -Pandroid -Psign -Dkeystore.password=foo' to sign and align -->
+	<profiles>
+		<profile>
+			<id>sign</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jarsigner-plugin</artifactId>
+						<version>1.2</version>
+						<executions>
+							<execution>
+								<id>signing</id>
+								<goals><goal>sign</goal></goals>
+								<phase>package</phase>
+								<inherited>true</inherited>
+								<configuration>
+									<archiveDirectory></archiveDirectory>
+									<includes>
+										<include>target/*.apk</include>
+									</includes>
+									<keystore>${keystore.path}</keystore>
+									<storepass>${keystore.password}</storepass>
+									<keypass>${key.password}</keypass>
+									<alias>${keystore.alias}</alias>
+									<arguments>
+										<argument>-sigalg</argument><argument>MD5withRSA</argument>
+										<argument>-digestalg</argument><argument>SHA1</argument>
+									</arguments>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+						<artifactId>android-maven-plugin</artifactId>
+						<inherited>true</inherited>
+						<configuration>
+							<zipalign><skip>false</skip></zipalign>
+							<sign><debug>false</debug></sign>
+						</configuration>
+						<executions>
+							<execution>
+								<id>alignApk</id>
+								<phase>package</phase>
+								<goals><goal>zipalign</goal></goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

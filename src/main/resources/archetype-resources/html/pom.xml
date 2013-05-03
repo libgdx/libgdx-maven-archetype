@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>${groupId}</groupId>
@@ -15,8 +15,6 @@
 	<properties>
 		<gwt.module>${package}.${JavaGameClassName}</gwt.module>
 		<gwt.name>${rootArtifactId}</gwt.name>
-        <asset.input.dir>${project.basedir}/../desktop/assets</asset.input.dir>
-        <asset.output.dir>${project.build.directory}/${project.build.finalName}</asset.output.dir>
 	</properties>
 
 	<dependencies>
@@ -33,10 +31,19 @@
 		</dependency>
 
 		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${rootArtifactId}-core</artifactId>
+			<version>${project.version}</version>
+			<classifier>sources</classifier>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>com.badlogic.gdx</groupId>
 			<artifactId>gdx</artifactId>
 			<version>${gdx.version}</version>
 			<classifier>sources</classifier>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -44,6 +51,7 @@
 			<artifactId>gdx-backend-gwt</artifactId>
 			<version>${gdx.version}</version>
 			<classifier>sources</classifier>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -61,21 +69,25 @@
 	</dependencies>
 
 	<build>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/src/main/java</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*.gwt.xml</include>
-                </includes>
-            </resource>
-        </resources>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/java</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.gwt.xml</include>
+				</includes>
+			</resource>
+		</resources>
 
 		<plugins>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>gwt-maven-plugin</artifactId>
-				<version>2.5.0</version>
+				<version>${gwt.maven.version}</version>
+				<configuration>
+					<webappDirectory>${project.build.directory}/webapp</webappDirectory>
+					<runTarget>index.html</runTarget>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
@@ -83,9 +95,33 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
 				<configuration>
-					<runTarget>${JavaGameClassName}.html</runTarget>
+					<webappDirectory>${project.build.directory}/webapp</webappDirectory>
 				</configuration>
+			</plugin>
+
+			<!-- allows testing of HTML backend via: mvn integration-test -Phtml -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.0.0.v20110901</version>
+				<configuration>
+					<webApp>${project.basedir}/target/webapp</webApp>
+				</configuration>
+				<executions>
+					<execution>
+						<id>test-html</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>run-exploded</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
