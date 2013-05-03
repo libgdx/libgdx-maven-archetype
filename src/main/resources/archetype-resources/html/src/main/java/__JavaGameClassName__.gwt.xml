@@ -2,14 +2,14 @@
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
 <module rename-to='${rootArtifactId}'>
-  <inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
+	<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
 
-  <source path='core'/>
-  <source path='html'/>
+	<source path='core'/>
+	<source path='html'/>
 
-  <public path="resources" />
+	<public path="resources" />
 
-  <entry-point class='${package}.html.${JavaGameClassName}Html'/>
-  <set-configuration-property name="gdx.assetpath" value="${asset.input.dir},desktop/assets,../desktop/assets,../../../../desktop/assets/" />
-  <set-configuration-property name="gdx.assetoutputpath" value="${asset.output.dir},${artifactId}-${version},src/main/webapp,./" />
+	<entry-point class='${package}.html.${JavaGameClassName}Html'/>
+	<set-configuration-property name="gdx.assetpath" value="assets" />
+	<set-configuration-property name="gdx.assetoutputpath" value="html/target/webapp" />
 </module>
