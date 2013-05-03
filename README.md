@@ -31,11 +31,11 @@ Creating a project using the archetype is accomplished like so:
 
 This will then ask you a few questions:
 
-> Define value for property 'groupId': : *com.mytest*
-> Define value for property 'artifactId': : *mygame*
-> Define value for property 'version':  1.0-SNAPSHOT: : *<default>*
-> Define value for property 'package':  com.mytest: : *<default>*
-> Define value for property 'JavaGameClassName': : *MyGame*
+  * Define value for property 'groupId': : *com.mytest*
+  * Define value for property 'artifactId': : *mygame*
+  * Define value for property 'version':  1.0-SNAPSHOT: : *<default>*
+  * Define value for property 'package':  com.mytest: : *<default>*
+  * Define value for property 'JavaGameClassName': : *MyGame*
 
 The parts in bold above are the things we typed in. You can pick whatever you want for `groupId`
 and `artifactId`, though it's customary for `groupId` to be a reverse domain name for a domain that
@@ -101,8 +101,8 @@ whatever. This is done like so:
 ```
 
 This will generate your game in `html/target/webapp`. The important files and directories in that
-directory are: `assets`, `index.html` and `mygame`. The other cruft (`META-INF` and `WEB-INF` you
-can ignore, unless you want to deploy your game as a webapp to somewhere like Google App Engine).
+directory are: `assets`, `index.html` and `mygame`. The other cruft (`META-INF` and `WEB-INF`) you
+can ignore, unless you want to deploy your game as a webapp to somewhere like Google App Engine.
 
 ### Build and run the Android backend
 
@@ -140,8 +140,8 @@ Building the iOS backend is currently TBD. Check back later!
 
 ## Credits
 
-Much of this archetype was adapted from [PlayN]'s archetype.
+Much of this archetype was adapted from [PlayN's archetype].
 
-[libGDX]: https://code.google.com/p/libgdx/
+[libGDX]: http://libgdx.badlogicgames.com/
 [Xamarin.iOS]: http://www.xamarin.com/
-[PlayN]: https://code.google.com/p/playn/
+[PlayN's archetype]: https://github.com/threerings/playn/tree/master/archetype
