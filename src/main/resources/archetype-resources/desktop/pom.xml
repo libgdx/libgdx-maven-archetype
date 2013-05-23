@@ -39,7 +39,21 @@
 			<groupId>com.badlogic.gdx</groupId>
 			<artifactId>gdx-platform</artifactId>
 			<version>${gdx.version}</version>
-			<classifier>natives-desktop</classifier>
+			<classifier>natives-linux</classifier>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.badlogic.gdx</groupId>
+			<artifactId>gdx-platform</artifactId>
+			<version>${gdx.version}</version>
+			<classifier>natives-mac</classifier>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.badlogic.gdx</groupId>
+			<artifactId>gdx-platform</artifactId>
+			<version>${gdx.version}</version>
+			<classifier>natives-win</classifier>
 		</dependency>
 	</dependencies>
 
