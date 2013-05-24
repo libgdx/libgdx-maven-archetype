@@ -11,7 +11,7 @@
 	<properties>
 		<gdx.version>${project.version}</gdx.version>
 		<android.version>4.1.1.4</android.version>
-		<android.maven.version>3.5.0</android.maven.version>
+		<android.maven.version>3.6.0</android.maven.version>
 		<gwt.version>2.5.0</gwt.version>
 		<gwt.maven.version>2.5.0</gwt.maven.version>
 	</properties>
@@ -19,7 +19,7 @@
 	<repositories>
 		<repository>
 			<id>gdx-nightlies</id>
-			<url>http://libgdx.badlogicgames.com/nightlies/maven</url>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
 		</repository>
 	</repositories>
 

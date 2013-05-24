@@ -25,7 +25,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
+			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-backend-gwt</artifactId>
 			<version>${gdx.version}</version>
 		</dependency>
@@ -39,7 +39,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
+			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx</artifactId>
 			<version>${gdx.version}</version>
 			<classifier>sources</classifier>
@@ -47,7 +47,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
+			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-backend-gwt</artifactId>
 			<version>${gdx.version}</version>
 			<classifier>sources</classifier>
