@@ -119,19 +119,16 @@
 				<include>pom.xml</include>
 			</includes>
 		</fileSet>
-		<fileSet filtered="true" encoding="UTF-8">
-			<directory>ios</directory>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>ios/src/main/java</directory>
 			<includes>
-				<include>Info.plist</include>
-				<include>*.cs</include>
-				<include>*.csproj</include>
-				<include>*.sln</include>
+				<include>**/*.java</include>
 			</includes>
 		</fileSet>
-		<fileSet encoding="UTF-8">
-			<directory>ios</directory>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>ios/src/test/java</directory>
 			<includes>
-				<include>**/*.png</include>
+				<include>**/*.java</include>
 			</includes>
 		</fileSet>
 	</fileSets>
