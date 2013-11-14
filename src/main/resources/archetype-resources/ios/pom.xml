@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>${artifactId}-ios</artifactId>
-	<packaging>dll</packaging>
+	<packaging>jar</packaging>
 	<name>${JavaGameClassName} iOS</name>
 
 	<dependencies>
@@ -21,44 +21,74 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
-			<artifactId>gdx-backend-ios</artifactId>
-			<version>${gdx.version}</version>
-		</dependency>
+      <groupId>com.badlogicgames.gdx</groupId>
+      <artifactId>gdx-backend-robovm</artifactId>
+      <version>${gdx.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.badlogicgames.gdx</groupId>
+      <artifactId>gdx-platform</artifactId>
+      <version>${gdx.version}</version>
+      <classifier>natives-ios</classifier>
+      <scope>provided</scope>
+    </dependency>
 	</dependencies>
 
 	<build>
-		<!-- use bin as that's where MonoDevelop puts its build bits -->
-		<directory>bin</directory>
-		<!-- omit the version from the dll name so it doesn't change with releases -->
-		<finalName>${project.artifactId}</finalName>
-		<plugins>
-			<plugin>
-				<groupId>com.samskivert</groupId>
-				<artifactId>ikvm-maven-plugin</artifactId>
-				<version>1.1.5</version>
-				<!-- this lets Maven know that we define 'packaging: dll' -->
-				<extensions>true</extensions>
-				<configuration>
-					<ikvmArgs>
-						<ikvmArg>-debug</ikvmArg>
-					</ikvmArgs>
-					<createStub>true</createStub>
-					<dlls>
-						<dll>OpenTK.dll</dll>
-						<dll>monotouch.dll</dll>
-						<dll>System.Data.dll</dll>
-						<dll>Mono.Data.Sqlite.dll</dll>
-					</dlls>
-					<copyDlls>
-						<copyDll>bin/IKVM.Runtime.dll</copyDll>
-						<copyDll>bin/IKVM.Runtime.JNI.dll</copyDll>
-						<copyDll>bin/IKVM.OpenJDK.Core.dll</copyDll>
-						<copyDll>bin/IKVM.OpenJDK.Util.dll</copyDll>
-						<copyDll>bin/IKVM.OpenJDK.Text.dll</copyDll>
-					</copyDlls>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <plugins>
+      <plugin>
+        <groupId>com.googlecode.mavennatives</groupId>
+        <artifactId>maven-nativedependencies-plugin</artifactId>
+        <version>0.0.7</version>
+        <configuration>
+          <nativesTargetDir>libs</nativesTargetDir>
+          <separateDirs>true</separateDirs>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.robovm</groupId>
+        <artifactId>robovm-maven-plugin</artifactId>
+        <version>${robovm.maven.version}</version>
+        <configuration>
+          <config>
+            <mainClass>${package}.ios.${JavaGameClassName}ApplicationDelegate</mainClass>
+            <os>ios</os>
+            <arch>x86</arch>
+            <resources>
+              <resource>
+                <directory>../assets</directory>
+                <includes>
+                  <include>**</include>
+                </includes>
+                <skipPngCrush>true</skipPngCrush>
+              </resource>
+            </resources>
+            <libs>
+              <lib>libs/ios/libgdx.a</lib>
+              <lib>libs/ios/libObjectAL.a</lib>
+            </libs>
+            <frameworks>
+              <framework>UIKit</framework>
+              <framework>OpenGLES</framework>
+              <framework>QuartzCore</framework>
+              <framework>CoreGraphics</framework>
+              <framework>OpenAL</framework>
+              <framework>AudioToolbox</framework>
+              <framework>AVFoundation</framework>
+            </frameworks>
+          </config>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
