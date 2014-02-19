@@ -77,7 +77,7 @@ whatever you like with:
 ```
 % cd mygame
 % mvn package -Pdesktop
-% java -jar desktop/target/mygame-1.0-SNAPSHOT-jar-with-dependencies.jar
+% java -jar desktop/target/mygame-desktop-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 ### Build and run the HTML backend
