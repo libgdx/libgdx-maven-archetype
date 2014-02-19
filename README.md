@@ -26,20 +26,20 @@ Creating a project using the archetype is accomplished like so:
     -DarchetypeRepository=$HOME/.m2/repository \
     -DarchetypeGroupId=com.badlogic.gdx \
     -DarchetypeArtifactId=gdx-archetype \
-    -DarchetypeVersion=0.9.9-SNAPSHOT
+    -DarchetypeVersion=0.9.9
 ```
 
 This will then ask you a few questions:
 
-  * Define value for property 'groupId': : *com.mytest*
-  * Define value for property 'artifactId': : *mygame*
-  * Define value for property 'version':  1.0-SNAPSHOT: : *<default>*
-  * Define value for property 'package':  com.mytest: : *<default>*
-  * Define value for property 'JavaGameClassName': : *MyGame*
+  * Define value for property 'groupId': : **com.mytest**
+  * Define value for property 'artifactId': : **mygame**
+  * Define value for property 'version':  1.0-SNAPSHOT: : **<default>**
+  * Define value for property 'package':  com.mytest: : **<default>**
+  * Define value for property 'JavaGameClassName': : **MyGame**
 
 The parts in bold above are the things we typed in. You can pick whatever you want for `groupId`
 and `artifactId`, though it's customary for `groupId` to be a reverse domain name for a domain that
-you own, and for `artifactId` to be a simple lowercase name that identifies your project.
+you own, and for `artifactId` to be a simple lowercase name that identifies your project. 
 
 `version` defaults to `1.0-SNAPSHOT` but you can make it whatever you want. It's not used anywhere,
 and you're not going to be _publishing_ your game via Maven, so it doesn't really matter.
