@@ -4,7 +4,7 @@
 											xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<requiredProperties>
 		<requiredProperty key="JavaGameClassName"/>
-	</requiredProperties>
+    </requiredProperties>
 	<fileSets>
 		<!-- assets "module" -->
 		<fileSet filtered="false" packaged="false" encoding="UTF-8">
@@ -119,21 +119,12 @@
 				<include>pom.xml</include>
 			</includes>
 		</fileSet>
-		<fileSet filtered="true" encoding="UTF-8">
-			<directory>ios</directory>
-			<includes>
-				<include>Info.plist</include>
-				<include>*.cs</include>
-				<include>*.csproj</include>
-				<include>*.sln</include>
-			</includes>
-		</fileSet>
-		<fileSet encoding="UTF-8">
-			<directory>ios</directory>
-			<includes>
-				<include>**/*.png</include>
-			</includes>
-		</fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>ios/src/main/java</directory>
+            <includes>
+                <include>**/*.java</include>
+            </includes>
+        </fileSet>
 	</fileSets>
 
 	<modules>

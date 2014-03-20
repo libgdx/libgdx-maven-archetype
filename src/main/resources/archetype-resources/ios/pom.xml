@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>${artifactId}-ios</artifactId>
-	<packaging>dll</packaging>
+	<packaging>jar</packaging>
 	<name>${JavaGameClassName} iOS</name>
 
 	<dependencies>
@@ -20,45 +20,25 @@
 			<version>${project.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.badlogic.gdx</groupId>
-			<artifactId>gdx-backend-ios</artifactId>
-			<version>${gdx.version}</version>
-		</dependency>
+        <dependency>
+            <groupId>com.badlogicgames.gdx</groupId>
+            <artifactId>gdx-backend-robovm</artifactId>
+            <version>${gdx.version}</version>
+        </dependency>
 	</dependencies>
 
-	<build>
-		<!-- use bin as that's where MonoDevelop puts its build bits -->
-		<directory>bin</directory>
-		<!-- omit the version from the dll name so it doesn't change with releases -->
-		<finalName>${project.artifactId}</finalName>
-		<plugins>
-			<plugin>
-				<groupId>com.samskivert</groupId>
-				<artifactId>ikvm-maven-plugin</artifactId>
-				<version>1.1.5</version>
-				<!-- this lets Maven know that we define 'packaging: dll' -->
-				<extensions>true</extensions>
-				<configuration>
-					<ikvmArgs>
-						<ikvmArg>-debug</ikvmArg>
-					</ikvmArgs>
-					<createStub>true</createStub>
-					<dlls>
-						<dll>OpenTK.dll</dll>
-						<dll>monotouch.dll</dll>
-						<dll>System.Data.dll</dll>
-						<dll>Mono.Data.Sqlite.dll</dll>
-					</dlls>
-					<copyDlls>
-						<copyDll>bin/IKVM.Runtime.dll</copyDll>
-						<copyDll>bin/IKVM.Runtime.JNI.dll</copyDll>
-						<copyDll>bin/IKVM.OpenJDK.Core.dll</copyDll>
-						<copyDll>bin/IKVM.OpenJDK.Util.dll</copyDll>
-						<copyDll>bin/IKVM.OpenJDK.Text.dll</copyDll>
-					</copyDlls>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.robovm</groupId>
+                <artifactId>robovm-maven-plugin</artifactId>
+                <version>${robovm.maven.version}</version>
+                <configuration>
+                    <mainClass>${package}.ios.${JavaGameClassName}ApplicationDelegate</mainClass>
+                    <os>ios</os>
+                    <arch>x86</arch>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
