@@ -30,20 +30,17 @@
 		<dependency>
 			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-backend-android</artifactId>
-			<version>${gdx.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-platform</artifactId>
-			<version>${gdx.version}</version>
 			<classifier>natives-armeabi</classifier>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-platform</artifactId>
-			<version>${gdx.version}</version>
 			<classifier>natives-armeabi-v7a</classifier>
 			<scope>provided</scope>
 		</dependency>
