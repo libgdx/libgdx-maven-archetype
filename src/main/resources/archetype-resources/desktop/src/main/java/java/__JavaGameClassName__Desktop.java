@@ -11,7 +11,6 @@ import ${package}.core.${JavaGameClassName};
 public class ${JavaGameClassName}Desktop {
 	public static void main (String[] args) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.useGL20 = true;
 		new LwjglApplication(new ${JavaGameClassName}(), config);
 	}
 }

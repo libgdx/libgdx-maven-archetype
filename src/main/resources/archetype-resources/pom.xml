@@ -16,7 +16,14 @@
 	</properties>
 	<dependencyManagement>
 		<dependencies>
+			<!-- core dependencies -->
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 
+			<!-- android-specific dependencies -->
 			<dependency>
 				<groupId>com.badlogicgames.gdx</groupId>
 				<artifactId>gdx-backend-android</artifactId>
@@ -27,6 +34,48 @@
 				<groupId>com.badlogicgames.gdx</groupId>
 				<artifactId>gdx-platform</artifactId>
 				<version>${project.version}</version>
+				<classifier>natives-armeabi</classifier>
+				<scope>provided</scope>
+			</dependency>
+
+
+			<!-- desktop-specific dependencies -->
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx-backend-lwjgl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx-platform</artifactId>
+				<version>${project.version}</version>
+				<classifier>natives-desktop</classifier>
+			</dependency>
+
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx-platform</artifactId>
+				<version>${project.version}</version>
+				<classifier>natives-armeabi-v7a</classifier>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- gwt-specific dependencies -->
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx</artifactId>
+				<version>${project.version}</version>
+				<classifier>sources</classifier>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.badlogicgames.gdx</groupId>
+				<artifactId>gdx-backend-gwt</artifactId>
+				<version>${project.version}</version>
+				<classifier>sources</classifier>
+				<scope>provided</scope>
 			</dependency>
 
 			<dependency>
@@ -35,24 +84,13 @@
 				<version>${project.version}</version>
 			</dependency>
 
-			<dependency>
-				<groupId>com.badlogicgames.gdx</groupId>
-				<artifactId>gdx</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.badlogicgames.gdx</groupId>
-				<artifactId>gdx-backend-lwjgl</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-
+			<!-- ios-specific dependencies -->
+			<!-- requires robovm upgrades -->
 			<dependency>
 				<groupId>com.badlogic.gdx</groupId>
 				<artifactId>gdx-backend-ios</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-
 		</dependencies>
 	</dependencyManagement>
 
@@ -61,6 +99,10 @@
 		<repository>
 			<id>gdx-nightlies</id>
 			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
+		<repository>
+			<id>gdx-releases</id>
+			<url>https://oss.sonatype.org/content/repositories/releases/</url>
 		</repository>
 	</repositories>
 
