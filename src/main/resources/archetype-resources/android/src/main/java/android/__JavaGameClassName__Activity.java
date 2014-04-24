@@ -16,7 +16,6 @@ public class ${JavaGameClassName}Activity extends AndroidApplication {
 	public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-			config.useGL20 = true;
 			initialize(new ${JavaGameClassName}(), config);
 	}
 }
