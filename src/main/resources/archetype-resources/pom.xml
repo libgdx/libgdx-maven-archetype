@@ -10,7 +10,7 @@
 
 	<properties>
 		<android.version>4.1.1.4</android.version>
-		<android.maven.version>3.8.1</android.maven.version>
+		<android.maven.version>3.9.0-rc.3</android.maven.version>
 		<gwt.version>2.6.0</gwt.version>
 		<gwt.maven.version>2.6.0</gwt.maven.version>
 	</properties>
