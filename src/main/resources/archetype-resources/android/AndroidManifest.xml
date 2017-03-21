@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-					package="${package}.android"
+					package="${package}.${rootArtifactId}"
 					android:screenOrientation="landscape"
 					android:versionCode="1"
 					android:versionName="1.0">
