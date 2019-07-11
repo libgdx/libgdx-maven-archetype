@@ -16,10 +16,6 @@
 			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.badlogicgames.ashley</groupId>
-			<artifactId>ashley</artifactId>
-		</dependency>
 	</dependencies>
 
 	<build>

@@ -7,9 +7,7 @@
 	<packaging>maven-archetype</packaging>
 
 	<name>Libgdx Project Archetype</name>
-	<description>Archetype for libgdx projects. Includes Ashley ECS
-		Support. Forked from
-	</description>
+	<description>Archetype for libgdx projects.</description>
 
 	<build>
 		<extensions>
