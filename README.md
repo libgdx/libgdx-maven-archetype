@@ -26,7 +26,7 @@ Creating a project using the archetype is accomplished like so:
     -DarchetypeRepository=$HOME/.m2/repository \
     -DarchetypeGroupId=com.badlogic.gdx \
     -DarchetypeArtifactId=gdx-archetype \
-    -DarchetypeVersion=1.2.0
+    -DarchetypeVersion=1.3.2
 ```
 
 This will then ask you a few questions:
