@@ -22,6 +22,7 @@
 		<dependency>
 			<groupId>com.badlogic.gdx</groupId>
 			<artifactId>gdx-backend-ios</artifactId>
+			<version>${libgdx.version}</version>
 		</dependency>
 	</dependencies>
 

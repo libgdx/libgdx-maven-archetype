@@ -1,155 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
-                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                      xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
-                      name="basic">
-    <requiredProperties>
-        <requiredProperty key="JavaGameClassName"/>
-    </requiredProperties>
-    <fileSets>
-        <!-- assets "module" -->
-        <fileSet filtered="false" packaged="false" encoding="UTF-8">
-            <directory>assets</directory>
-            <includes>
-                <include>**/*</include>
-            </includes>
-        </fileSet>
-        <!-- desktop module -->
-        <fileSet filtered="true" encoding="UTF-8">
-            <directory>desktop</directory>
-            <includes>
-                <include>pom.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
-            <directory>desktop/src/main/java</directory>
-            <includes>
-                <include>**/*.java</include>
-            </includes>
-        </fileSet>
-        <!-- html module -->
-        <fileSet filtered="true" encoding="UTF-8">
-            <directory>html</directory>
-            <includes>
-                <include>pom.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
-            <directory>html/src/test/java</directory>
-        </fileSet>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
-            <directory>html/src/main/java</directory>
-            <includes>
-                <include>**/*.java</include>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="true" encoding="UTF-8">
-            <directory>html/src/main/webapp</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="false">
-            <directory>html/src/main/webapp</directory>
-            <includes>
-                <include>favicon.ico</include>
-            </includes>
-        </fileSet>
-        <!-- android module -->
-        <fileSet filtered="true" encoding="UTF-8">
-            <directory>android</directory>
-            <includes>
-                <include>pom.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
-            <directory>android/src/main/java</directory>
-            <includes>
-                <include>**/*.java</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
-            <directory>android/src/test/java</directory>
-            <includes>
-                <include>**/*.java</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="true" encoding="UTF-8">
-            <directory>android/res/values</directory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-            <directory>android/res/drawable-ldpi</directory>
-            <includes>
-                <include>**/*.png</include>
-            </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-            <directory>android/res/drawable-hdpi</directory>
-            <includes>
-                <include>**/*.png</include>
-            </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-            <directory>android/res/drawable-mdpi</directory>
-            <includes>
-                <include>**/*.png</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="true" encoding="UTF-8">
-            <directory>android</directory>
-            <includes>
-                <include>AndroidManifest.xml</include>
-                <include>default.properties</include>
-            </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-            <directory>android</directory>
-            <includes>
-                <include>proguard.cfg</include>
-            </includes>
-        </fileSet>
-        <!-- ios module -->
-        <fileSet filtered="true" encoding="UTF-8">
-            <directory>ios</directory>
-            <includes>
-                <include>pom.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet filtered="true" encoding="UTF-8">
-            <directory>ios</directory>
-            <includes>
-                <include>Info.plist</include>
-                <include>*.cs</include>
-                <include>*.csproj</include>
-                <include>*.sln</include>
-            </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-            <directory>ios</directory>
-            <includes>
-                <include>**/*.png</include>
-            </includes>
-        </fileSet>
-    </fileSets>
+<archetype-descriptor
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+	name="basic"
+	xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<requiredProperties>
+		<requiredProperty key="JavaGameClassName" />
+	</requiredProperties>
+	<fileSets>
+		<!-- assets "module" -->
+		<fileSet filtered="false" packaged="false" encoding="UTF-8">
+			<directory>assets</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<!-- desktop module -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>desktop</directory>
+			<includes>
+				<include>pom.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>desktop/src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<!-- html module -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>html</directory>
+			<includes>
+				<include>pom.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>html/src/test/java</directory>
+		</fileSet>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>html/src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>html/src/main/webapp</directory>
+			<includes>
+				<include>**/*.xml</include>
+				<include>**/*.html</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="false">
+			<directory>html/src/main/webapp</directory>
+			<includes>
+				<include>favicon.ico</include>
+			</includes>
+		</fileSet>
+		<!-- android module -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>android</directory>
+			<includes>
+				<include>pom.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>android/src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>android/src/test/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>android/res/values</directory>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8">
+			<directory>android/res/drawable-ldpi</directory>
+			<includes>
+				<include>**/*.png</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8">
+			<directory>android/res/drawable-hdpi</directory>
+			<includes>
+				<include>**/*.png</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8">
+			<directory>android/res/drawable-mdpi</directory>
+			<includes>
+				<include>**/*.png</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>android</directory>
+			<includes>
+				<include>AndroidManifest.xml</include>
+				<include>default.properties</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8">
+			<directory>android</directory>
+			<includes>
+				<include>proguard.cfg</include>
+			</includes>
+		</fileSet>
+		<!-- ios module -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>ios</directory>
+			<includes>
+				<include>pom.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>ios</directory>
+			<includes>
+				<include>Info.plist</include>
+				<include>*.cs</include>
+				<include>*.csproj</include>
+				<include>*.sln</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8">
+			<directory>ios</directory>
+			<includes>
+				<include>**/*.png</include>
+			</includes>
+		</fileSet>
+	</fileSets>
 
-    <modules>
-        <module id="${rootArtifactId}-core" dir="core" name="${rootArtifactId}-core">
-            <fileSets>
-                <fileSet filtered="true" packaged="true" encoding="UTF-8">
-                    <directory>src/main/java</directory>
-                    <includes>
-                        <include>**/*.java</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" packaged="true" encoding="UTF-8">
-                    <directory>src/test/java</directory>
-                </fileSet>
-            </fileSets>
-        </module>
-    </modules>
+	<modules>
+		<module id="${rootArtifactId}-core" dir="core"
+			name="${rootArtifactId}-core">
+			<fileSets>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" packaged="true" encoding="UTF-8">
+					<directory>src/test/java</directory>
+				</fileSet>
+			</fileSets>
+		</module>
+	</modules>
 </archetype-descriptor>

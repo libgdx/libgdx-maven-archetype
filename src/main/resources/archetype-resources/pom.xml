@@ -11,12 +11,20 @@
 		<gdx.version>${project.version}</gdx.version>
 		<android.version>4.1.1.4</android.version>
 		<android.maven.version>3.8.1</android.maven.version>
+		<ashley.version>1.7.0</ashley.version>
 		<gwt.version>2.6.0</gwt.version>
 		<gwt.maven.version>2.6.0</gwt.maven.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
-			<!-- core dependencies -->
+			<!-- Ashley dependencies -->
+			<dependency>
+				<groupId>com.badlogicgames.ashley</groupId>
+				<artifactId>ashley</artifactId>
+				<version>${ashley.version}</version>
+			</dependency>
+
+			<!-- LibGDX core dependencies -->
 			<dependency>
 				<groupId>com.badlogicgames.gdx</groupId>
 				<artifactId>gdx</artifactId>
@@ -37,7 +45,6 @@
 				<classifier>natives-armeabi</classifier>
 				<scope>provided</scope>
 			</dependency>
-
 
 			<!-- desktop-specific dependencies -->
 			<dependency>
