@@ -92,8 +92,8 @@ nb-configuration.xml
 gradle-app.setting
 build/
 
-## Maven
-target/
+## Maven <- This ignore must be ignored for the HTML5 version!
+##target/
 
 ## OS Specific
 .DS_Store
@@ -104,3 +104,5 @@ target/
 ehthumbs.db
 Thumbs.db
 *.lnk
+/classes/
+/modelone-html/

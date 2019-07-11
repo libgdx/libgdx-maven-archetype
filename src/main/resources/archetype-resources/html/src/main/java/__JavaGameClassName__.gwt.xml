@@ -12,4 +12,9 @@
 	<entry-point class='${package}.html.${JavaGameClassName}Html'/>
 	<set-configuration-property name="gdx.assetpath" value="assets" />
 	<set-configuration-property name="gdx.assetoutputpath" value="html/target/webapp" />
+    <add-linker name="xsiframe"/>
+    <set-configuration-property name="devModeRedirectEnabled" value="true"/>
+	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
+    <set-property name="user.agent" value="gecko1_8, safari"/>
+    <collapse-property name="user.agent" values="*" />
 </module>

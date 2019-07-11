@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="basic"
-											xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
-											xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<archetype-descriptor
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+	name="basic"
+	xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<requiredProperties>
-		<requiredProperty key="JavaGameClassName"/>
+		<requiredProperty key="JavaGameClassName" />
 	</requiredProperties>
 	<fileSets>
 		<!-- assets "module" -->
@@ -54,6 +56,9 @@
 			<directory>html/src/main/webapp</directory>
 			<includes>
 				<include>favicon.ico</include>
+				<include>**/*.js</include>
+				<include>**/*.png</include>
+				<include>**/*.css</include>
 			</includes>
 		</fileSet>
 		<!-- android module -->
@@ -134,21 +139,22 @@
 				<include>**/*.png</include>
 			</includes>
 		</fileSet>
+		<!-- core module -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>core</directory>
+			<includes>
+				<include>pom.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true"encoding="UTF-8">
+			<directory>core/src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8" filtered="true" packaged="true">
+			<directory>core/src/test/java</directory>
+		</fileSet>
 	</fileSets>
 
-	<modules>
-		<module id="${rootArtifactId}-core" dir="core" name="${rootArtifactId}-core">
-			<fileSets>
-				<fileSet filtered="true" packaged="true" encoding="UTF-8">
-					<directory>src/main/java</directory>
-					<includes>
-						<include>**/*.java</include>
-					</includes>
-				</fileSet>
-				<fileSet filtered="true" packaged="true" encoding="UTF-8">
-					<directory>src/test/java</directory>
-				</fileSet>
-			</fileSets>
-		</module>
-	</modules>
 </archetype-descriptor>
