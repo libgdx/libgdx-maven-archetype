@@ -145,3 +145,9 @@ Much of this archetype was adapted from [PlayN's archetype].
 [libGDX]: http://libgdx.badlogicgames.com/
 [Xamarin.iOS]: http://www.xamarin.com/
 [PlayN's archetype]: https://github.com/threerings/playn/tree/master/archetype
+
+
+### Bazomatic Fork Notes
+v1.0.0.0 (June 18 2017)
+</br>
+  * Cloned existing branch

@@ -16,6 +16,7 @@
 	</properties>
 
 	<dependencies>
+		<!-- Core Project -->
 		<dependency>
 			<groupId>${groupId}</groupId>
 			<artifactId>${rootArtifactId}-core</artifactId>
@@ -47,7 +48,7 @@
 		</resources>
 
 		<plugins>
-			<!-- this run the game when you invoke: mvn integration-test -Pdesktop -->
+			<!-- this runs the game when you invoke: mvn integration-test -Pdesktop -->
 			<plugin>
 				<groupId>com.googlecode.mavennatives</groupId>
 				<artifactId>maven-nativedependencies-plugin</artifactId>
@@ -56,7 +57,9 @@
 					<execution>
 						<id>unpacknatives</id>
 						<phase>pre-integration-test</phase>
-						<goals><goal>copy</goal></goals>
+						<goals>
+							<goal>copy</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
@@ -69,7 +72,7 @@
 						<configuration>
 							<target>
 								<java fork="true" classname="${mainClass}" classpathref="maven.test.classpath">
-									<sysproperty key="java.library.path" value="target/natives"/>
+									<sysproperty key="java.library.path" value="target/natives" />
 								</java>
 							</target>
 						</configuration>
