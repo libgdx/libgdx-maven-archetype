@@ -26,14 +26,14 @@ Creating a project using the archetype is accomplished like so:
     -DarchetypeRepository=$HOME/.m2/repository \
     -DarchetypeGroupId=com.badlogic.gdx \
     -DarchetypeArtifactId=gdx-archetype \
-    -DarchetypeVersion=1.3.2
+    -DarchetypeVersion=1.9.9
 ```
 
-This will then ask you a few questions:
+This will then ask you a few questions about your project's configuration:
 
   * Define value for property 'groupId': : **com.mytest**
   * Define value for property 'artifactId': : **mygame**
-  * Define value for property 'version':  1.2.0: : **<default>**
+  * Define value for property 'version':  1.0-SNAPSHOT: : **<default>**
   * Define value for property 'package':  com.mytest: : **<default>**
   * Define value for property 'JavaGameClassName': : **MyGame**
 
