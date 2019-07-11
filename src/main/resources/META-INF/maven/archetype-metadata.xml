@@ -50,16 +50,15 @@
 			<includes>
 				<include>**/*.xml</include>
 				<include>**/*.html</include>
-				<include>**/*.js</include>
-				<include>**/*.png</include>
-				<include>**/*.css</include>
-				<include>**/*.ico</include>
 			</includes>
 		</fileSet>
 		<fileSet filtered="false">
 			<directory>html/src/main/webapp</directory>
 			<includes>
 				<include>favicon.ico</include>
+				<include>**/*.js</include>
+				<include>**/*.png</include>
+				<include>**/*.css</include>
 			</includes>
 		</fileSet>
 		<!-- android module -->
