@@ -136,8 +136,25 @@
 				<include>**/*.png</include>
 			</includes>
 		</fileSet>
+		<!-- core module -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>core</directory>
+			<includes>
+				<include>pom.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true"encoding="UTF-8">
+			<directory>core/src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet encoding="UTF-8" filtered="true" packaged="true">
+			<directory>core/src/test/java</directory>
+		</fileSet>
 	</fileSets>
 
+	<!--
 	<modules>
 		<module id="${rootArtifactId}-core" dir="core"
 			name="${rootArtifactId}-core">
@@ -154,4 +171,5 @@
 			</fileSets>
 		</module>
 	</modules>
+	-->
 </archetype-descriptor>

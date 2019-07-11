@@ -26,7 +26,7 @@
 		<dependency>
 			<groupId>com.badlogicgames.gdx</groupId>
 			<artifactId>gdx-backend-gwt</artifactId>
-			<version>${libgdx.version}</version>
+			<version>${gdx.version}</version>
 		</dependency>
 
 		<dependency>
